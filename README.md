@@ -61,9 +61,15 @@ Los valores de configuración disponibles son:
 Un ejemplo de configuración es:
 
 cfg_minutesRemaining=10
+
 cfg_upsDevices=(192.168.1.1 192.168.1.2)
+
 cfg_upsSnmpAuth=("-v2c -c public" "-v2c -c public")
+
 cfg_vmwareServers=(vm01.domain.local vm02.domain.local vm03.domain.local)
+
 cfg_mailServer=mail.domain.local
+
 cfg_mailFrom="shutdown-esxi-by-ups.sh <from@domain.local>"
+
 cfg_mailTo=to@domain.local
