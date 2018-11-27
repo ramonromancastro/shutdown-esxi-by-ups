@@ -1,0 +1,39 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+# [0.2.0] - 2018-11-27
+## Added
+- Soporte para varios dispositivos UPS.
+- Soporte para servidores basados en ESX/ESXi 4.x.
+- Mensajes de depuración (--debug).
+- Archivo de log de la ejecución /var/log/wake-off-lan.log (--log).
+- Soporte para generar automaticamente los thumbprints de los servidores (--generate).
+- Soporte para forzar el apagado sin necesidad de cumplir los requisitos (--force).
+- Soporte para el envío de correos electrónicos de aviso.
+### Changed
+- Se ha reemplazado el nombre del script por shutdown-esxi-by-ups.sh.
+- Uso de archivo .cloginrc (simplificado) para almacenar las credencidales.
+- Uso de archivo de configuración para parametrizar la ejecución (--config).
+- Variable con el nombre del script para aplicar los cambios en un único lugar.
+- Modificada la ruta de almacenamiento de los thumbprint de los certificados.
+- Modificada la ruta de almacenamiento de los archivos de configuración.
+- Los mensajes de la consola tienen colores dependiendo de su tipo.
+### Deprecated
+### Removed
+### Fixed
+- Mensajes de error de los comando redirigidos a /dev/null.
+### Security
+
+# [0.1.0] - 2018-11-26
+### Added
+- Versión inicial
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
