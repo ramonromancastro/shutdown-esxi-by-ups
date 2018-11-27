@@ -1,0 +1,4 @@
+add user vm01.domain.local administrator
+add user vm02.domain.local administrator
+add user * root
+add password * P@$$w0rd
