@@ -19,6 +19,14 @@ Actualmente, las versiones en las cuales se ha probado el funcionamiento del scr
 - VMware ESXi 4.x
 - VMware ESXi 6.x
 
+## Prerrequisitos
+
+- mailx
+- snmpget
+- vSphere CLI
+  - esxcli
+  - vmware-cmd
+
 ## Instalación
 
 ```
@@ -30,21 +38,29 @@ Actualmente, las versiones en las cuales se ha probado el funcionamiento del scr
 [user@server]# chmod 600 etc/default.conf
 ```
 
-### Configuración
+## Configuración
 
-#### .cloginrc
+### etc/.cloginrc
 
 Este archivo de configuración contiene las credenciales de acceso para cada uno de los servidores ESXi. El formato del archivo es una simplificación del formato utilizado por los archivos de configuración del tipo *clogin configuration file*.
 
 Los valores que se pueden utilizar son los siguientes:
 
-add user SERVIDOR USERNAME
-
-add password SERVIDOR PASSWORD
+- add user SERVIDOR USERNAME
+- add password SERVIDOR PASSWORD
 
 donde SERVIDOR es el nombre del servidor que se define en el archivo de configuración. Se puede especificar *, en cuyo caso, se utilizará para todos los servidores
 
-#### default.conf
+Un ejemplo de configuración es:
+
+```
+add user vm01.domain.local administrator
+add user vm02.domain.local administrator
+add user * root
+add password * P@$$w0rd
+```
+
+### etc/default.conf
 
 Este es el archivo de configuración por defecto. Dado que este archivo se pasa como parámetro a la ejecución del script, pueden definirse todos los que se necesiten, dependiendo de los diferentes entornos que deseemos gestionar.
 
@@ -60,16 +76,12 @@ Los valores de configuración disponibles son:
 
 Un ejemplo de configuración es:
 
+```
 cfg_minutesRemaining=10
-
 cfg_upsDevices=(192.168.1.1 192.168.1.2)
-
 cfg_upsSnmpAuth=("-v2c -c public" "-v2c -c public")
-
 cfg_vmwareServers=(vm01.domain.local vm02.domain.local vm03.domain.local)
-
 cfg_mailServer=mail.domain.local
-
 cfg_mailFrom="shutdown-esxi-by-ups.sh <from@domain.local>"
-
 cfg_mailTo=to@domain.local
+```
