@@ -40,6 +40,12 @@ Actualmente, las versiones en las cuales se ha probado el funcionamiento del scr
 
 ## Configuración
 
+### certs/
+
+En este directorio se almacenan las thumbprint de los certificados de cada uno de los servidores, para un correcto funcionamiento de la aplicación esxcli.
+
+El script incluye el parámetro --generate, que se encarga de generar estos archivos para cada uno de los servidores especificados en el archivo de configuración.
+
 ### etc/.cloginrc
 
 Este archivo de configuración contiene las credenciales de acceso para cada uno de los servidores ESXi. El formato del archivo es una simplificación del formato utilizado por los archivos de configuración del tipo *clogin configuration file*.
