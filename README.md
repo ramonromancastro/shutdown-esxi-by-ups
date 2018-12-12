@@ -30,7 +30,7 @@ Actualmente, las versiones en las cuales se ha probado el funcionamiento del scr
 ## Instalación
 
 ```
-[user@server]# chmod +x shutdown-esxi-by.ups.sh
+[user@server]# chmod +x shutdown-esxi-by-ups.sh
 [user@server]# cp etc/.cloginrc.template etc/.cloginrc
 [user@server]# cp etc/default.template etc/default.conf
 [user@server]# chmod 700 etc
