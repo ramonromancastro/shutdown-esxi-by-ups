@@ -1,0 +1,6 @@
+# Archivos de configuración
+etc/.cloginrc
+etc/default.conf
+
+# Huellas de los certificados
+certs/
