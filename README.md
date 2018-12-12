@@ -27,6 +27,10 @@ Actualmente, las versiones en las cuales se ha probado el funcionamiento del scr
   - esxcli
   - vmware-cmd
 
+### Enlaces de interés
+
+[Installing vCLI on Linux Systems with Internet Access](https://pubs.vmware.com/vsphere-6-0/index.jsp?topic=%2Fcom.vmware.vcli.getstart.doc%2Fcli_install.4.5.html)
+
 ## Instalación
 
 Hay que descargar el archivo **install.sh** adjunto al Release correspondiente y ejecutarlo en la ruta raíz donde se ha instalado el script. Una vez ejecutado, eliminar el archivo.
