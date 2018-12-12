@@ -29,14 +29,9 @@ Actualmente, las versiones en las cuales se ha probado el funcionamiento del scr
 
 ## Instalación
 
-```
-[user@server]# chmod +x shutdown-esxi-by-ups.sh
-[user@server]# cp etc/.cloginrc.template etc/.cloginrc
-[user@server]# cp etc/default.template etc/default.conf
-[user@server]# chmod 700 etc
-[user@server]# chmod 600 etc/.cloginrc
-[user@server]# chmod 600 etc/default.conf
-```
+Hay que descargar el archivo **install.sh** adjunto al Release correspondiente y ejecutarlo en la ruta raíz donde se ha instalado el script. Una vez ejecutado, eliminar el archivo.
+
+Este proceso de instalación crea los archivos de configuración iniciales a partir de las plantillas y modifica los permisos de los directorios y archivos para securizar la instalación.
 
 ## Configuración
 
