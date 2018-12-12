@@ -4,3 +4,6 @@ etc/default.conf
 
 # Huellas de los certificados
 certs/
+
+# Archivo de instalación
+install.sh
