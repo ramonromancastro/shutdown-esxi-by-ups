@@ -38,7 +38,7 @@ set -o pipefail
 
 # CONSTANTES
 
-version=0.2.0
+version=0.3.0
 script=shutdown-esxi-by-ups
 
 oid_upsBatteryStatus=.1.3.6.1.2.1.33.1.2.1.0
@@ -73,6 +73,7 @@ force=
 log=
 generate=
 debug=
+dryRun=
 
 # FUNCIONES
 
@@ -162,6 +163,7 @@ OPTIONS:
     --log       Duplicate messages to /var/log/${script}.log
     --debug     Generate debug log
     --generate  Auto-generate thumbprints for all servers
+    --dry-run   Execute without modifications
     --help      Show this help
 
 EOF
@@ -224,6 +226,9 @@ while [[ $# -gt 0 ]]; do
 			;;
 		--log)
 			log=1
+			;;
+		--dry-run)
+			dryRun=1
 			;;
 		--debug)
 			debug=1
@@ -301,6 +306,7 @@ if [ $force ]; then
 fi
 
 # Apagado automático
+if [ $dryRun ]; then
 esxCLI=esxcli
 write_log "Inicio del apagado automático."
 for host in ${cfg_vmwareServers[*]}; do
@@ -392,6 +398,7 @@ for host in ${cfg_vmwareServers[*]}; do
 		fi
 	fi
 done
+fi
 
 send_mail
 
